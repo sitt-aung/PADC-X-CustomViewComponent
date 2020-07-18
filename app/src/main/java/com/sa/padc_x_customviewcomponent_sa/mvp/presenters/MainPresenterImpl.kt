@@ -1,5 +1,6 @@
 package com.sa.padc_x_customviewcomponent_sa.mvp.presenters
 
+import android.util.Log
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import com.sa.padc_x_customviewcomponent_sa.data.models.NewsModelImpl
@@ -11,6 +12,22 @@ class MainPresenterImpl : MainPresenter, AbstractBasePresenter<MainView>() {
 
     override fun onTapNewsItem(newsId: Int) {
         mView?.navigateToNewsDetails(newsId)
+    }
+
+    override fun onTapLike() {
+        Log.d("TAG", "onTapLike")
+    }
+
+    override fun onTapComment() {
+        Log.d("TAG", "onTapComment")
+    }
+
+    override fun onTapShare() {
+        Log.d("TAG", "onTapShare")
+    }
+
+    override fun onTapTryAgain() {
+        loadAllNewsFromApi()
     }
 
     override fun onSwipeRefresh(lifecycleOwner: LifecycleOwner) {
@@ -30,5 +47,12 @@ class MainPresenterImpl : MainPresenter, AbstractBasePresenter<MainView>() {
             mView?.disableSwipeRefresh()
             if (it.isEmpty()) mView?.displayEmptyView() else mView?.displayNewsList(it)
         })
+    }
+
+    private fun loadAllNewsFromApi() {
+        mNewsModel.getAllNewsFromApiAndSaveToDatabase(
+            onSuccess = {},
+            onError = {}
+        )
     }
 }

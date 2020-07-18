@@ -10,8 +10,11 @@ class EmptyViewPod @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : RelativeLayout(context, attrs, defStyleAttr) {
 
+    private var mDelegate: Delegate? = null
+
     override fun onFinishInflate() {
         super.onFinishInflate()
+        setUpListener()
     }
 
     fun setEmptyData(emptyMessage : String, emptyImageUrl: String){
@@ -20,5 +23,19 @@ class EmptyViewPod @JvmOverloads constructor(
         Glide.with(context)
             .load(emptyImageUrl)
             .into(ivEmptyImage)
+    }
+
+    fun setDelegate(delegate: Delegate) {
+        mDelegate = delegate
+    }
+
+    private fun setUpListener() {
+        btnTryAgain.setOnClickListener {
+            mDelegate?.onTapTryAgain()
+        }
+    }
+
+    interface Delegate {
+        fun onTapTryAgain()
     }
 }

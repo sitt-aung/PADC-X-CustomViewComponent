@@ -19,4 +19,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <org.mmtextview.components.MMButton
+        android:id="@+id/btnTryAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Try Again"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/tvEmpty"
+        android:layout_marginTop="@dimen/margin_medium"/>
+
 </com.sa.padc_x_customviewcomponent_sa.views.viewpods.EmptyViewPod>

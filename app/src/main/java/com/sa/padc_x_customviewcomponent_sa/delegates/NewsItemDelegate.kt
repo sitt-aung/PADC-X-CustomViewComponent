@@ -1,5 +1,7 @@
 package com.sa.padc_x_customviewcomponent_sa.delegates
 
-interface NewsItemDelegate {
+import com.sa.padc_x_customviewcomponent_sa.views.viewpods.ReactionViewPod
+
+interface NewsItemDelegate : ReactionViewPod.Delegate {
     fun onTapNewsItem(newsId : Int)
 }
