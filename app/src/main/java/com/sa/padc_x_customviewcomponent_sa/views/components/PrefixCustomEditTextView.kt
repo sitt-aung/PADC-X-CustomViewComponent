@@ -6,6 +6,8 @@ import android.graphics.Color
 import android.graphics.Rect
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.core.content.withStyledAttributes
+import com.sa.padc_x_customviewcomponent_sa.R
 
 class PrefixCustomEditTextView(context: Context, attrs: AttributeSet)
     : AppCompatEditText(context, attrs) {
@@ -15,6 +17,13 @@ class PrefixCustomEditTextView(context: Context, attrs: AttributeSet)
     private var mPrefixColor = Color.BLACK
 
     private val mPrefixRect = Rect()
+
+    init {
+        context.withStyledAttributes(attrs, R.styleable.PrefixCustomEditTextView) {
+            mPrefix = getString(R.styleable.PrefixCustomEditTextView_prefix) ?: mPrefix
+            mPrefixColor = getColor(R.styleable.PrefixCustomEditTextView_prefixColor, mPrefixColor)
+        }
+    }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         // 1. place the prefix text

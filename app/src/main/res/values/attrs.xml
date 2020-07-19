@@ -4,5 +4,10 @@
     <declare-styleable name="RoundedCornerImageView">
         <attr name="cornerRadius" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="PrefixCustomEditTextView">
+        <attr name="prefix" format="string" />
+        <attr name="prefixColor" format="color" />
+    </declare-styleable>
     
 </resources>
