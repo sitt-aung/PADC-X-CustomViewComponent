@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
+            <com.sa.padc_x_customviewcomponent_sa.views.components.SmartRecyclerView
                 android:id="@+id/rvNews"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
