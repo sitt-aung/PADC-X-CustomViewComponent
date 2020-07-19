@@ -34,11 +34,18 @@ class MainActivity : BaseActivity(), MainView {
         setUpSwipeRefresh()
         setUpViewPod()
         setUpRecyclerView()
+        setUpListener()
         mPresenter.onUiReady(this)
     }
 
     override fun displayNewsList(newsList: List<NewsVO>) {
         mAdapter.setNewData(newsList.toMutableList())
+    }
+
+    private fun setUpListener(){
+        btnNavigate.setOnClickListener {
+            startActivity(ModifyCustomViewActivity.newIntent(this))
+        }
     }
 
     override fun navigateToNewsDetails(newsId: Int) {

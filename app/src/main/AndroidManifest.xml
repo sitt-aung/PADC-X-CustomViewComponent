@@ -13,11 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activities.ModifyCustomViewActivity"></activity>
         <activity
             android:name=".activities.NewsDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar"></activity>
         <activity
             android:name=".activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
