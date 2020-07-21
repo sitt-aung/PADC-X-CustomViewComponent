@@ -18,7 +18,8 @@ class ModifyCustomViewActivity : AppCompatActivity() {
 
     private fun setListener() {
         btnNavigate.setOnClickListener {
-            startActivity(CustomComponentActivity.newIntent(this))
+//            startActivity(CustomComponentActivity.newIntent(this))
+            startActivity(FanControlActivity.newIntent(this))
         }
     }
 
